@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ParkingMarker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UBu-Mo-ZAt">
+                                <rect key="frame" x="0.0" y="70" width="375" height="512"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="500" id="3nr-yR-liq"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="bq9-2m-Mby" customClass="CustomCell" customModule="ParkingMarker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bq9-2m-Mby" id="vbX-93-3Qt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRc-dm-4vt">
+                                                    <rect key="frame" x="161" y="8" width="53.5" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eRc-dm-4vt" firstAttribute="centerY" secondItem="vbX-93-3Qt" secondAttribute="centerY" id="Bj1-DD-dHQ"/>
+                                                <constraint firstItem="eRc-dm-4vt" firstAttribute="centerX" secondItem="vbX-93-3Qt" secondAttribute="centerX" id="cdW-YV-izQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="label" destination="eRc-dm-4vt" id="HXh-fN-UOk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfz-6l-Pxx">
+                                <rect key="frame" x="0.0" y="582" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.50980392159999999" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="9TD-I1-Ldn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="Save This Location">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addNewLocationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dy9-Qs-GZ3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Marker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dru-V6-dkz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Tu-di-cu7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qfz-6l-Pxx" secondAttribute="trailing" id="9Dc-3O-Yt0"/>
+                            <constraint firstItem="dru-V6-dkz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NIy-ql-5fe"/>
+                            <constraint firstItem="UBu-Mo-ZAt" firstAttribute="top" secondItem="dru-V6-dkz" secondAttribute="bottom" id="VOT-YG-2Fg"/>
+                            <constraint firstItem="UBu-Mo-ZAt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xol-sO-Wy7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qfz-6l-Pxx" secondAttribute="bottom" constant="25" id="YLx-Xb-DzM"/>
+                            <constraint firstItem="qfz-6l-Pxx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eTH-i5-Ddg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dru-V6-dkz" secondAttribute="trailing" id="hT0-Bq-fA9"/>
+                            <constraint firstItem="UBu-Mo-ZAt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ipr-v8-EL2"/>
+                            <constraint firstItem="qfz-6l-Pxx" firstAttribute="top" secondItem="UBu-Mo-ZAt" secondAttribute="bottom" id="sBm-J8-bzv"/>
+                            <constraint firstItem="dru-V6-dkz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sZI-VR-HaC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="UBu-Mo-ZAt" id="fJJ-uE-NRd"/>
+                        <segue destination="BXo-pl-wB6" kind="show" identifier="segueToMap" id="XCR-Uw-3KL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="119"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="q7W-z1-hCE">
+            <objects>
+                <viewController id="BXo-pl-wB6" customClass="MapViewController" customModule="ParkingMarker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e2r-oV-RcT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="XbI-vp-LcI">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOb-nN-Ucv">
+                                <rect key="frame" x="167" y="587" width="40" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.013810229279999999" blue="0.030096522109999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0nA-bQ-07x"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="BXo-pl-wB6" eventType="touchUpInside" id="gvf-zB-lF6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XbI-vp-LcI" firstAttribute="top" secondItem="Qwo-a4-AGw" secondAttribute="top" id="4aM-yF-vrk"/>
+                            <constraint firstItem="pOb-nN-Ucv" firstAttribute="centerX" secondItem="e2r-oV-RcT" secondAttribute="centerX" id="Prj-Ix-Nfw"/>
+                            <constraint firstItem="Qwo-a4-AGw" firstAttribute="bottom" secondItem="pOb-nN-Ucv" secondAttribute="bottom" constant="50" id="YJo-rw-bSF"/>
+                            <constraint firstItem="Qwo-a4-AGw" firstAttribute="bottom" secondItem="XbI-vp-LcI" secondAttribute="bottom" id="eXn-ai-GsT"/>
+                            <constraint firstItem="Qwo-a4-AGw" firstAttribute="trailing" secondItem="XbI-vp-LcI" secondAttribute="trailing" id="lHm-yA-FgU"/>
+                            <constraint firstItem="XbI-vp-LcI" firstAttribute="leading" secondItem="Qwo-a4-AGw" secondAttribute="leading" id="nbo-iE-Lum"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qwo-a4-AGw"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="XbI-vp-LcI" id="bBj-FR-WQX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSR-6F-yqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="120"/>
+        </scene>
+    </scenes>
+</document>
